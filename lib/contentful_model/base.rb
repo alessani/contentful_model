@@ -56,7 +56,7 @@ module ContentfulModel
         end
       else
         # if there's no coercion specified, return the result
-        if self.class.coercions[method].nil?
+        if self.class.coercions.nil? || self.class.coercions[method].nil?
           return result
         #if there's a coercion specified for the field and it's a proc, pass the result
         #to the proc
